@@ -43,9 +43,9 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBoxJPG = new System.Windows.Forms.CheckBox();
-            this.checkBoxRaw = new System.Windows.Forms.CheckBox();
             this.checkBoxVideo = new System.Windows.Forms.CheckBox();
+            this.checkBoxRaw = new System.Windows.Forms.CheckBox();
+            this.checkBoxJPG = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -172,15 +172,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FileType";
             // 
-            // checkBoxJPG
+            // checkBoxVideo
             // 
-            this.checkBoxJPG.AutoSize = true;
-            this.checkBoxJPG.Location = new System.Drawing.Point(7, 20);
-            this.checkBoxJPG.Name = "checkBoxJPG";
-            this.checkBoxJPG.Size = new System.Drawing.Size(46, 17);
-            this.checkBoxJPG.TabIndex = 0;
-            this.checkBoxJPG.Text = "JPG";
-            this.checkBoxJPG.UseVisualStyleBackColor = true;
+            this.checkBoxVideo.AutoSize = true;
+            this.checkBoxVideo.Location = new System.Drawing.Point(145, 20);
+            this.checkBoxVideo.Name = "checkBoxVideo";
+            this.checkBoxVideo.Size = new System.Drawing.Size(53, 17);
+            this.checkBoxVideo.TabIndex = 2;
+            this.checkBoxVideo.Text = "Video";
+            this.checkBoxVideo.UseVisualStyleBackColor = true;
             // 
             // checkBoxRaw
             // 
@@ -192,15 +192,15 @@
             this.checkBoxRaw.Text = "RAW";
             this.checkBoxRaw.UseVisualStyleBackColor = true;
             // 
-            // checkBoxVideo
+            // checkBoxJPG
             // 
-            this.checkBoxVideo.AutoSize = true;
-            this.checkBoxVideo.Location = new System.Drawing.Point(145, 20);
-            this.checkBoxVideo.Name = "checkBoxVideo";
-            this.checkBoxVideo.Size = new System.Drawing.Size(53, 17);
-            this.checkBoxVideo.TabIndex = 2;
-            this.checkBoxVideo.Text = "Video";
-            this.checkBoxVideo.UseVisualStyleBackColor = true;
+            this.checkBoxJPG.AutoSize = true;
+            this.checkBoxJPG.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxJPG.Name = "checkBoxJPG";
+            this.checkBoxJPG.Size = new System.Drawing.Size(46, 17);
+            this.checkBoxJPG.TabIndex = 0;
+            this.checkBoxJPG.Text = "JPG";
+            this.checkBoxJPG.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -215,6 +215,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Copy Images & RAW";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

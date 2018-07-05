@@ -149,14 +149,13 @@ namespace Copy_Images_From_SD
                 MessageBox.Show("Please mark at least one type to copy");
                 return;
             }
-              //TODO: add auto save settings  
+            autoSaveSettings();
 
             buttonCopy.Enabled = false;
             buttonCancel.Enabled = true;
             m_oWorker.RunWorkerAsync();
             
         }
-
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -175,7 +174,22 @@ namespace Copy_Images_From_SD
         #endregion
 
         #region Methods
-
+        private void autoSaveSettings()
+        {
+            Properties.Settings.Default.SourceFolder = textBoxSrc.Text;
+            Properties.Settings.Default.DestFolder = textBoxDest.Text;
+            Properties.Settings.Default.checkJPG = checkBoxJPG.Checked;
+            Properties.Settings.Default.checkArm = checkBoxRaw.Checked;
+            Properties.Settings.Default.checkVideo = checkBoxVideo.Checked;
+        }
+        private void autoLoadSettings()
+        {
+            textBoxSrc.Text = Properties.Settings.Default.SourceFolder;
+            textBoxDest.Text = Properties.Settings.Default.DestFolder;
+            checkBoxJPG.Checked = Properties.Settings.Default.checkJPG;
+            checkBoxRaw.Checked = Properties.Settings.Default.checkArm;
+            checkBoxVideo.Checked = Properties.Settings.Default.checkVideo;
+        }
         private void processSingleFile(string[] allfiles, int i)
         {
             FileInfo info = new FileInfo(allfiles[i]);
@@ -220,7 +234,12 @@ namespace Copy_Images_From_SD
             }
             return true;
 
-        }       
+        }
         #endregion
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
