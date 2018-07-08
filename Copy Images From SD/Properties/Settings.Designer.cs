@@ -82,5 +82,17 @@ namespace Copy_Images_From_SD.Properties {
                 this["checkVideo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool checkVidWith {
+            get {
+                return ((bool)(this["checkVidWith"]));
+            }
+            set {
+                this["checkVidWith"] = value;
+            }
+        }
     }
 }

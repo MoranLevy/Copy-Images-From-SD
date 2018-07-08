@@ -46,6 +46,7 @@
             this.checkBoxVideo = new System.Windows.Forms.CheckBox();
             this.checkBoxRaw = new System.Windows.Forms.CheckBox();
             this.checkBoxJPG = new System.Windows.Forms.CheckBox();
+            this.checkBoxVidWithJPG = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -162,6 +163,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBoxVidWithJPG);
             this.groupBox2.Controls.Add(this.checkBoxVideo);
             this.groupBox2.Controls.Add(this.checkBoxRaw);
             this.groupBox2.Controls.Add(this.checkBoxJPG);
@@ -201,6 +203,16 @@
             this.checkBoxJPG.TabIndex = 0;
             this.checkBoxJPG.Text = "JPG";
             this.checkBoxJPG.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxVidWithJPG
+            // 
+            this.checkBoxVidWithJPG.AutoSize = true;
+            this.checkBoxVidWithJPG.Location = new System.Drawing.Point(204, 20);
+            this.checkBoxVidWithJPG.Name = "checkBoxVidWithJPG";
+            this.checkBoxVidWithJPG.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxVidWithJPG.TabIndex = 3;
+            this.checkBoxVidWithJPG.Text = "Video With JPG";
+            this.checkBoxVidWithJPG.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -246,6 +258,7 @@
         private System.Windows.Forms.CheckBox checkBoxVideo;
         private System.Windows.Forms.CheckBox checkBoxRaw;
         private System.Windows.Forms.CheckBox checkBoxJPG;
+        private System.Windows.Forms.CheckBox checkBoxVidWithJPG;
     }
 }
 

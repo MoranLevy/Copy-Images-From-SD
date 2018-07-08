@@ -181,6 +181,8 @@ namespace Copy_Images_From_SD
             Properties.Settings.Default.checkJPG = checkBoxJPG.Checked;
             Properties.Settings.Default.checkArm = checkBoxRaw.Checked;
             Properties.Settings.Default.checkVideo = checkBoxVideo.Checked;
+            Properties.Settings.Default.checkVidWith = checkBoxVidWithJPG.Checked;
+            Properties.Settings.Default.Save();
         }
         private void autoLoadSettings()
         {
@@ -189,6 +191,7 @@ namespace Copy_Images_From_SD
             checkBoxJPG.Checked = Properties.Settings.Default.checkJPG;
             checkBoxRaw.Checked = Properties.Settings.Default.checkArm;
             checkBoxVideo.Checked = Properties.Settings.Default.checkVideo;
+            checkBoxVidWithJPG.Checked = Properties.Settings.Default.checkVidWith;
         }
         private void processSingleFile(string[] allfiles, int i)
         {
@@ -212,7 +215,11 @@ namespace Copy_Images_From_SD
         private string getFileDestPath(FileInfo info)
         {
             DateTime lastModified = System.IO.File.GetLastWriteTime(info.FullName);
-            return  info.Extension.Replace(".","") + "\\" + lastModified.ToString("yyyy.MM.dd");
+            //Temporery ugly code 
+            if (checkBoxVidWithJPG.Checked && info.Extension.ToLower() == ".mp4")
+                return "jpg\\" + lastModified.ToString("yyyy.MM.dd");
+            else
+                return info.Extension.Replace(".", "") + "\\" + lastModified.ToString("yyyy.MM.dd");
 
         }
 
@@ -239,7 +246,8 @@ namespace Copy_Images_From_SD
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            autoLoadSettings();
         }
+
     }
 }
